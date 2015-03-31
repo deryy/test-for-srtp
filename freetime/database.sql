@@ -1,0 +1,21 @@
+CREATE TABLE `record` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '流水号',
+	`student_id` INT(10) UNSIGNED NOT NULL COMMENT '学号',
+	`name` CHAR(12) NOT NULL COMMENT '姓名',
+	`gender` TINYINT(1) NOT NULL COMMENT '性别',
+	`mobile_full` BIGINT(11) UNSIGNED NOT NULL COMMENT '手机全号',
+	`mobile_short` INT(6) UNSIGNED NULL DEFAULT NULL COMMENT '手机短号',
+	`email` CHAR(50) NOT NULL COMMENT '电子邮箱',
+	`grade` INT(4) UNSIGNED NOT NULL COMMENT '入学年',
+	`major` CHAR(50) NOT NULL COMMENT '专业/大类',
+	`choice0` TINYINT(3) UNSIGNED NOT NULL COMMENT '选项一',
+	`choice1` TINYINT(3) UNSIGNED NULL DEFAULT NULL COMMENT '选项二',
+	`intro` TEXT NULL COMMENT '个人简介',
+	`useragent` TEXT NOT NULL COMMENT '奇怪的东西^_^',
+	`guid` CHAR(40) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `GUID` (`guid`)
+)
+COMMENT='申请记录'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
